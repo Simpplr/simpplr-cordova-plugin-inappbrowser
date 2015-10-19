@@ -17,7 +17,7 @@
 #         under the License.
 -->
 
-# cordova-plugin-inappbrowser
+# simpplr-cordova-plugin-inappbrowser
 
 [![Build Status](https://travis-ci.org/apache/cordova-plugin-inappbrowser.svg)](https://travis-ci.org/apache/cordova-plugin-inappbrowser)
 
@@ -58,7 +58,7 @@ Although `window.open` is in the global scope, InAppBrowser is not available unt
 
 ## Installation
 
-    cordova plugin add cordova-plugin-inappbrowser
+    cordova plugin add https://github.com/santoshanand/simpplr-cordova-plugin-inappbrowser.git
 
 If you want all page loads in your app to go through the InAppBrowser, you can
 simply hook `window.open` during initialization.  For example:
