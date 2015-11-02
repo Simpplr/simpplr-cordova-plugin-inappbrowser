@@ -878,9 +878,9 @@
     self.addressLabel.text = NSLocalizedString(@"Loading...", nil);
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
-    self.spinner.hidden = NO;
+    self.spinner.hidden = YES;
     [self.spinner startAnimating];
-    self.overlayView.hidden = NO;
+    self.overlayView.hidden = YES;
 
     return [self.navigationDelegate webViewDidStartLoad:theWebView];
 }
