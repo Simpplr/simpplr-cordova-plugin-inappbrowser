@@ -408,7 +408,7 @@
     if([urlString rangeOfString:@"https://login.salesforce.com/" options:NSCaseInsensitiveSearch].location != NSNotFound) {
         self.isUserLoggedIn = false;
     }
-    if ((self.isUserLoggedIn && [urlString rangeOfString:@"simpplr" options:NSCaseInsensitiveSearch].location == NSNotFound) && [urlString rangeOfString:@"okta" options:NSCaseInsensitiveSearch].location == NSNotFound && [urlString rangeOfString:@"view-api.box" options:NSCaseInsensitiveSearch].location == NSNotFound ) {
+    if ((self.isUserLoggedIn && [urlString rangeOfString:@"simpplr" options:NSCaseInsensitiveSearch].location == NSNotFound) && [urlString rangeOfString:@"okta" options:NSCaseInsensitiveSearch].location == NSNotFound && [urlString rangeOfString:@"view-api.box" options:NSCaseInsensitiveSearch].location == NSNotFound && [urlString rangeOfString:@"app.box.com" options:NSCaseInsensitiveSearch].location == NSNotFound ) {
         [[UIApplication sharedApplication] openURL:[request URL]];
         return NO;
     }
