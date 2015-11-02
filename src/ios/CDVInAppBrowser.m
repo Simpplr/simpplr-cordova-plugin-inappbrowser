@@ -643,8 +643,8 @@
     [self.view addSubview:self.toolbar];
     [self.view addSubview:self.addressLabel];
 //    [self.view addSubview:self.spinner];
-    // [self.overlayView addSubview:self.spinner];
-    // [self.view addSubview:self.overlayView];
+    [self.overlayView addSubview:self.spinner];
+    [self.view addSubview:self.overlayView];
 }
 
 - (void) setWebViewFrame : (CGRect) frame {

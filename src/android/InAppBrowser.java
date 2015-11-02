@@ -757,7 +757,7 @@ public class InAppBrowser extends CordovaPlugin {
                 // Add loader to view
 
                 loader.addView(progressBar, params);
-                // main.addView(loader);
+                main.addView(loader);
 
                 // Add our webview to our main view/layout
                 main.addView(inAppWebView);
