@@ -836,6 +836,9 @@ public class InAppBrowser extends CordovaPlugin {
 
         @Override
         public boolean shouldOverrideUrlLoading (WebView view, String url) {
+          
+
+
             boolean isNonSimpplr = false;
             // ArrayList<String> arrayList = com.simplion.simpplrlib.Config.getInstance().getNavigationList();
             // for (int i = 0; i < arrayList.size(); i++) {
@@ -858,10 +861,58 @@ public class InAppBrowser extends CordovaPlugin {
                 else {
                     showLoader();
                 }
+
+                if(needsToShowLoader(url)) {
+                  showLoader();
+                }
+
+
             // }
             return isNonSimpplr;
         }
 
+
+        private boolean needsToShowLoader(url) {
+          String logoutURL = "/secur/logout.jsp";
+          String frontdoorURL = "/secur/frontdoor.jsp?sid=";
+          String contentDoorURL = "/secur/contentDoor?startURL=";
+          String mydomainDoorURL = "/secur/myDomainDoor?oid";
+          String oauthCallBackUrl = "/oauthconnectedapp/oauth_callback.php?";
+          String getAccessTokenUrl = "/oauthconnectedapp/get_access_token.php?";
+          String recsessionUrl = "/visualforce/recsession?sid=";
+          String sessionURL = "visualforce/session?url=";
+          boolean returnVar = false;
+          if(url.contains(logoutURL)) {
+            returnVar = true;
+          }
+          else if(url.contains(frontdoorURL)) {
+            returnVar = true;
+
+          }
+          else if(url.contains(mydomainDoorURL)) {
+            returnVar = true;
+            
+          }
+          else if(url.contains(oauthCallBackUrl)) {
+            returnVar = true;
+            
+          }
+          else if(url.contains(getAccessTokenUrl)) {
+            returnVar = true;
+            
+          }
+          else if(url.contains(recsessionUrl)) {
+            returnVar = true;
+            
+          }
+          else if(url.contains(sessionURL)) {
+            returnVar = true;
+            
+          }
+          return returnVar;
+
+
+        }
 
 
         /**

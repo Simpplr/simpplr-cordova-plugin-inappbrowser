@@ -913,6 +913,16 @@
         [self.spinner startAnimating];
         self.overlayView.hidden = NO;
     }
+    else if([url rangeOfString:@"visualforce/recsession?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        self.spinner.hidden = NO;
+        [self.spinner startAnimating];
+        self.overlayView.hidden = NO;
+    }
+    else if([url rangeOfString:@"visualforce/session?url=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        self.spinner.hidden = NO;
+        [self.spinner startAnimating];
+        self.overlayView.hidden = NO;
+    }
     else {
         self.spinner.hidden = YES;
         [self.spinner startAnimating];
@@ -965,6 +975,16 @@
     }
     
     else if([url rangeOfString:@"/oauthconnectedapp/get_access_token.php?" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        self.spinner.hidden = NO;
+        [self.spinner startAnimating];
+        self.overlayView.hidden = NO;
+    }
+    else if([url rangeOfString:@"visualforce/recsession?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+        self.spinner.hidden = NO;
+        [self.spinner startAnimating];
+        self.overlayView.hidden = NO;
+    }
+    else if([url rangeOfString:@"visualforce/session?url=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
         self.spinner.hidden = NO;
         [self.spinner startAnimating];
         self.overlayView.hidden = NO;
