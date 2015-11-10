@@ -872,7 +872,7 @@ public class InAppBrowser extends CordovaPlugin {
         }
 
 
-        private boolean needsToShowLoader(url) {
+        private boolean needsToShowLoader(String url) {
           String logoutURL = "/secur/logout.jsp";
           String frontdoorURL = "/secur/frontdoor.jsp?sid=";
           String contentDoorURL = "/secur/contentDoor?startURL=";

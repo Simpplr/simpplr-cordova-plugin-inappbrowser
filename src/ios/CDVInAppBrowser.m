@@ -570,7 +570,7 @@
     self.spinner.userInteractionEnabled = NO;
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-
+    self.spinner.transform = CGAffineTransformMakeScale(0.75, 0.75);
     self.closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(close)];
     self.closeButton.enabled = YES;
 
