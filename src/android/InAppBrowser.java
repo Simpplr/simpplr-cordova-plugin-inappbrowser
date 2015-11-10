@@ -858,9 +858,9 @@ public class InAppBrowser extends CordovaPlugin {
                         isNonSimpplr = false;
                     }
                 }
-                else {
-                    showLoader();
-                }
+//                else {
+//                    showLoader();
+//                }
 
                 if(needsToShowLoader(url)) {
                   showLoader();
@@ -1011,7 +1011,7 @@ public class InAppBrowser extends CordovaPlugin {
         }
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-
+            needsToShowLoader(url);
             try {
                 JSONObject obj = new JSONObject();
                 obj.put("type", LOAD_STOP_EVENT);
