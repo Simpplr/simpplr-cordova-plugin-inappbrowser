@@ -909,6 +909,10 @@ public class InAppBrowser extends CordovaPlugin {
             returnVar = true;
             
           }
+          else if(url.contains(contentDoorURL)) {
+              returnVar = true;
+
+          }
           return returnVar;
 
 
