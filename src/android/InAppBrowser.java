@@ -259,16 +259,19 @@ public class InAppBrowser extends CordovaPlugin {
     }
 
     public void showLoader() {
-        Log.d("Hello ", "I am in show loader");
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                if(loader != null) {
-                    loader.setVisibility(View.VISIBLE);
+
+        if(isLoggedIn == false) {
+            Log.d("Hello ", "I am in show loader");
+            Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    if (loader != null) {
+                        loader.setVisibility(View.VISIBLE);
+                    }
                 }
-            }
-        };
-        this.cordova.getActivity().runOnUiThread(runnable);
+            };
+            this.cordova.getActivity().runOnUiThread(runnable);
+        }
     }
     public void hideLoader() {
         Log.d("Hello ", "I am in hide loader");
@@ -883,6 +886,7 @@ public class InAppBrowser extends CordovaPlugin {
           String sessionURL = "visualforce/session?url=";
           boolean returnVar = false;
           if(url.contains(logoutURL)) {
+              isLoggedIn = false;
             returnVar = true;
           }
           else if(url.contains(frontdoorURL)) {
