@@ -721,7 +721,7 @@ public class InAppBrowser extends CordovaPlugin {
                 settings.setJavaScriptCanOpenWindowsAutomatically(true);
                 settings.setBuiltInZoomControls(getShowZoomControls());
                 settings.setPluginState(android.webkit.WebSettings.PluginState.ON);
-                settings.setUserAgentString(thatWebView.getPreferences().getString("AppendUserAgent", "SimpplrAppBrowser"));
+                settings.setUserAgentString(settings.getUserAgentString()+" "+ thatWebView.getPreferences().getString("AppendUserAgent", "SimpplrAppBrowser"));
                 settings.setDomStorageEnabled(true);
                 settings.setDatabaseEnabled(true);
                 settings.setAppCacheEnabled(true);
