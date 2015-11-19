@@ -850,6 +850,8 @@
     [self rePositionViews];
 
     [super viewWillAppear:animated];
+    
+    [self.webView stringByEvaluatingJavaScriptFromString:@"localStorage.clear();"];
 }
 
 //
@@ -944,6 +946,9 @@
 {
     // update url, stop spinner, update back/forward
     NSString *url = [self.currentURL absoluteString];
+    
+    
+    
     if([url rangeOfString:@"/secur/frontdoor.jsp?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
         self.spinner.hidden = NO;
         [self.spinner startAnimating];
@@ -983,6 +988,9 @@
     self.addressLabel.text = [self.currentURL absoluteString];
     self.backButton.enabled = theWebView.canGoBack;
     self.forwardButton.enabled = theWebView.canGoForward;
+    
+    //    theWebView stringByEvaluatingJavaScriptFromString:@"document.body==null"
+    [theWebView stringByEvaluatingJavaScriptFromString:@"localStorage.clear();"];
 
 //    [self.spinner stopAnimating];
     //self.spinner.hidden = YES;
