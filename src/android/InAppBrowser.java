@@ -885,11 +885,8 @@ public class InAppBrowser extends CordovaPlugin {
           String recsessionUrl = "/visualforce/recsession?sid=";
           String sessionURL = "visualforce/session?url=";
           boolean returnVar = false;
-          if(url.contains(logoutURL)) {
-              isLoggedIn = false;
-            returnVar = true;
-          }
-          else if(url.contains(frontdoorURL)) {
+
+          if(url.contains(frontdoorURL)) {
             returnVar = true;
 
           }

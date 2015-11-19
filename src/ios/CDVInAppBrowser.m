@@ -882,12 +882,7 @@
     
     NSString *url = [self.currentURL absoluteString];
     
-    if([url rangeOfString:@"/secur/logout.jsp" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        self.spinner.hidden = NO;
-        [self.spinner startAnimating];
-        self.overlayView.hidden = NO;
-    }
-    else if([url rangeOfString:@"/secur/frontdoor.jsp?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+    if([url rangeOfString:@"/secur/frontdoor.jsp?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
         self.spinner.hidden = NO;
         [self.spinner startAnimating];
         self.overlayView.hidden = NO;
@@ -949,12 +944,7 @@
 {
     // update url, stop spinner, update back/forward
     NSString *url = [self.currentURL absoluteString];
-    if([url rangeOfString:@"/secur/logout.jsp" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-        self.spinner.hidden = NO;
-        [self.spinner startAnimating];
-        self.overlayView.hidden = NO;
-    }
-    else if([url rangeOfString:@"/secur/frontdoor.jsp?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+    if([url rangeOfString:@"/secur/frontdoor.jsp?sid=" options:NSCaseInsensitiveSearch].location != NSNotFound) {
         self.spinner.hidden = NO;
         [self.spinner startAnimating];
         self.overlayView.hidden = NO;
