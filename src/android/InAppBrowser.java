@@ -198,7 +198,12 @@ public class InAppBrowser extends CordovaPlugin {
                     callbackContext.sendPluginResult(pluginResult);
                 }
             });
+
+
         }
+
+
+
         else if (action.equals("close")) {
           closeDialog();
         }
@@ -475,7 +480,6 @@ public class InAppBrowser extends CordovaPlugin {
     private void navigate(String url) {
         InputMethodManager imm = (InputMethodManager)this.cordova.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(edittext.getWindowToken(), 0);
-        Log.d(LOG_TAG, "am i the first????");
         if (!url.startsWith("http") && !url.startsWith("file:")) {
             this.inAppWebView.loadUrl("http://" + url);
         } else {
@@ -717,6 +721,15 @@ public class InAppBrowser extends CordovaPlugin {
                 settings.setJavaScriptCanOpenWindowsAutomatically(true);
                 settings.setBuiltInZoomControls(getShowZoomControls());
                 settings.setPluginState(android.webkit.WebSettings.PluginState.ON);
+                settings.setUserAgentString(thatWebView.getPreferences().getString("AppendUserAgent", "SimpplrAppBrowser"));
+                settings.setDomStorageEnabled(true);
+                settings.setDatabaseEnabled(true);
+                settings.setAppCacheEnabled(true);
+                settings.setSaveFormData(true);;
+                settings.setLoadWithOverviewMode(true);
+                settings.setSaveFormData(true);
+
+
 
                 //Toggle whether this is enabled or not!
                 Bundle appSettings = cordova.getActivity().getIntent().getExtras();
@@ -1022,6 +1035,9 @@ public class InAppBrowser extends CordovaPlugin {
             } catch (JSONException ex) {
                 Log.d(LOG_TAG, "Should never happen");
             }
+
+            String javascript="javascript: localStorage.clear();";
+            inAppWebView.loadUrl(javascript);
         }
 
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
