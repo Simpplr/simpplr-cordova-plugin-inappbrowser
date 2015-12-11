@@ -862,7 +862,7 @@ public class InAppBrowser extends CordovaPlugin {
                 String simpplrURL = url;
 //                String searchPattern = simpplrURL.substring(0, simpplrURL.indexOf("."));
                 String searchPattern = "simpplr";
-
+                String logout = "visual.force.com/secur/logout.jsp";
                 checkLoggedIn(url, simpplrURL);
                 if (isLoggedIn) {
                     if (url.contains(searchPattern) == false) {
@@ -1021,6 +1021,9 @@ public class InAppBrowser extends CordovaPlugin {
             if(url.contains("visual.force.com/apex/Home") && url.contains("simpplr")) {
                 isLoggedIn = true;
                 hideLoader();
+            }
+            else if(url.contains("visual.force.com/secur/logout.jsp")){
+                isLoggedIn = false;
             }
         }
         public void onPageFinished(WebView view, String url) {
